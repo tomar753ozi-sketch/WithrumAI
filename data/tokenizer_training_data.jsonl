@@ -1,0 +1,30 @@
+﻿{"text": "Hello, I am Whitrum AI created by Oguzhan (Dr0xy-Drawn)."}
+{"text": "Merhaba, ben Whitrum AI. Dr0xy-Drawn tarafindan olusturuldum."}
+{"text": "I can search the internet for you using web search."}
+{"text": "What is machine learning? Machine learning is a subset of AI."}
+{"text": "def calculate_loss(prediction, target): return (prediction - target) ** 2"}
+{"text": "The capital of Turkey is Ankara."}
+{"text": "import torch; import torch.nn as nn"}
+{"text": "Python is a programming language created by Guido van Rossum."}
+{"text": "Transformers use self-attention mechanisms to process sequences."}
+{"text": "Whitrum AI supports 25+ languages including Turkish, English, Chinese."}
+{"text": "def train_step(model, data, optimizer): loss = model(data); loss.backward(); optimizer.step()"}
+{"text": "The quick brown fox jumps over the lazy dog."}
+{"text": "yapay zeka Turkce artificial intelligence olarak bilinir."}
+{"text": "Neural networks are inspired by biological brain structure."}
+{"text": "from transformers import AutoModelForCausalLM, AutoTokenizer"}
+{"text": "Merhaba dunya! Bu bir test ornegidir."}
+{"text": "Whitrum model has 350 million parameters."}
+{"text": "Q = query_states; K = key_states; V = value_states"}
+{"text": "Attention scores are computed as softmax(Q*K^T / sqrt(d_k))"}
+{"text": "SwiGLU activation: down_proj(silu(gate_proj(x)) * up_proj(x))"}
+{"text": "class WhitrumAttention(nn.Module): def __init__(self, config): super().__init__()"}
+{"text": "model = AutoModelForCausalLM.from_pretrained(whitrum-350m)"}
+{"text": "tokenizer.encode(text, allowed_special=all)"}
+{"text": "loss = CrossEntropyLoss()(logits.view(-1, vocab_size), labels.view(-1))"}
+{"text": "cos, sin = self.rotary_emb(value_states, position_ids)"}
+{"text": "attn_weights = torch.matmul(Q, K.transpose(2,3)) * self.scaling"}
+{"text": "hidden_states = residual + self.attn(self.norm1(hidden_states))"}
+{"text": "optimizer = torch.optim.AdamW(model.parameters(), lr=2e-4)"}
+{"text": "def forward(self, x): return self.down_proj(silu(self.gate_proj(x)) * self.up_proj(x))"}
+{"text": "The model uses rotary position embeddings for long context."}
