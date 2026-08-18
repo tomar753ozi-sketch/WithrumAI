@@ -51,10 +51,22 @@ class WhitrumModel(WhitrumPreTrainedModel):
         past_len = cache_position[0] if cache_position is not None else 0
         seq_len = input_tensor.shape[1]
         target_len = attention_mask.shape[-1] if attention_mask is not None else seq_len + past_len
-        causal_mask = torch.full((seq_len, target_len), fill_value=torch.finfo(input_tensor.dtype).min, dtype=input_tensor.dtype, device=input_tensor.device)
+        
+        causal_mask = torch.full(
+            (seq_len, target_len),
+            fill_value=torch.finfo(input_tensor.dtype).min,
+            dtype=input_tensor.dtype,
+            device=input_tensor.device,
+        )
         if seq_len != 1:
             causal_mask = torch.triu(causal_mask, diagonal=1)
-        return causal_mask.unsqueeze(0).unsqueeze(0)
+        
+        causal_mask = causal_mask.unsqueeze(0).unsqueeze(0)
+        
+        if attention_mask is not None and attention_mask.dim() == 2:
+            causal_mask = causal_mask.expand(input_tensor.shape[0], -1, -1, -1)
+        
+        return causal_mask
 
     def forward(self, input_ids=None, attention_mask=None, position_ids=None, past_key_values=None,
                 inputs_embeds=None, use_cache=None, output_attentions=None, output_hidden_states=None, return_dict=None):
